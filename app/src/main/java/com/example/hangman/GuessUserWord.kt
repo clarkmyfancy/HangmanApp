@@ -81,20 +81,6 @@ class GuessUserWord : AppCompatActivity() {
 
         }
         return candidateGuessUpdate.toString()
-
-//        for (i in 0 until length) {
-//            if (this.game.secretWord[i] == guess) {
-//                candidateGuessUpdate.append(guess)
-//                this.game.guessedLetters.plus(guess)
-//            }
-//            else if (this.game.guessedLetters.contains(this.game.secretWord[i])) {
-//                candidateGuessUpdate.append(this.game.secretWord[i])
-//            }
-//            else {
-//                candidateGuessUpdate.append("_")
-//            }
-//        }
-        return candidateGuessUpdate.toString()
     }
 
     fun updateDisguisedWord(dWord: String) {
