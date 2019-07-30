@@ -77,8 +77,6 @@ class GuessUserWord : AppCompatActivity() {
             else {
                 candidateGuessUpdate.append("_")
             }
-
-
         }
         return candidateGuessUpdate.toString()
     }
