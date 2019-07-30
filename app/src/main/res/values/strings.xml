@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Hangman</string>
+    <string name="letsPlay">Let\'s Play Hangman!</string>
+    <string name="GenerateRandomWord">Get Random Word</string>
+    <string name="UserEnteredWord">Enter A Word</string>
+    <string name="ComputerOpponentInfo">You will play against the computer</string>
+    <string name="PlayerOpponentInfo">You will play against a person</string>
+    <string name="startGame">Start a game</string>
+    <string name="enterSecretWord">Enter your secret word</string>
+    <string name="submit">Submit</string>
+    <string name="GuessWordActivityTitle">Guess the secret word</string>
+    <string name="askForGuess">Guess a letter</string>
+    <string name="onePlayer">One Player</string>
+    <string name="twoPlayer">Two Players</string>
+</resources>
