@@ -13,4 +13,6 @@
     <string name="onePlayer">One Player</string>
     <string name="twoPlayer">Two Players</string>
     <string name="wrong_picks">Wrong Picks</string>
+    <string name="about_menu">About</string>
+    <string name="about_message">About Message</string>
 </resources>
