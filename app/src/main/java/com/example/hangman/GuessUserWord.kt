@@ -42,6 +42,11 @@ class GuessUserWord : AppCompatActivity() {
         if (this.checkIfLetterInSecretWord(guessedLetter)) {
             val newDisguisedWord = this.generateNewDisguisedWord(guessedLetter.single())
             this.updateDisguisedWord(newDisguisedWord)
+        } else {
+            // if letter is not in secret word
+            // flash the text box red with their guess
+            val textView = findViewById<TextView>(R.id.askForGuess)
+            textView.setTextColor(getColor(R.color.red))
         }
         this.clearUserGuess()
     }
@@ -91,5 +96,7 @@ class GuessUserWord : AppCompatActivity() {
         val textView = findViewById<TextView>(R.id.askForGuess).apply {
             text = ""
         }
+
+        // turn the color of text view bck to black
     }
 }
