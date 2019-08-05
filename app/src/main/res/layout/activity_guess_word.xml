@@ -15,28 +15,13 @@
             android:layout_marginStart="24dp" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="24dp" android:textSize="30sp"/>
     <ImageView
-            android:layout_width="183dp"
-            android:layout_height="318dp" tools:srcCompat="@tools:sample/avatars[12]"
-            android:id="@+id/imageView" android:layout_marginTop="24dp"
+            android:layout_width="178dp"
+            android:layout_height="271dp" tools:srcCompat="@drawable/example"
+            android:id="@+id/imageView" android:layout_marginTop="20dp"
             app:layout_constraintTop_toBottomOf="@+id/disguised_word_text_view"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintEnd_toStartOf="@+id/frameLayout" android:contentDescription="hangmanGraphicStatus"
-    />
-    <FrameLayout
-            android:layout_width="169dp"
-            android:layout_height="319dp"
-            android:id="@+id/frameLayout" app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="24dp" app:layout_constraintTop_toBottomOf="@+id/disguised_word_text_view">
-
-        <TextView
-                android:text="@string/wrong_picks"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/textView2" android:textSize="18sp"
-                android:gravity="center" tools:layout_conversion_absoluteHeight="24dp"
-                tools:layout_editor_absoluteY="89dp" tools:layout_editor_absoluteX="222dp"
-                tools:layout_conversion_absoluteWidth="169dp"/>
-    </FrameLayout>
+            app:srcCompat="@drawable/example"/>
     <Button
             android:text="O"
             android:layout_width="39dp"
@@ -68,8 +53,8 @@
             android:id="@+id/button35" android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toStartOf="@+id/button32"
-            android:layout_marginLeft="50dp" android:layout_marginStart="50dp"
-            android:layout_marginTop="38dp" app:layout_constraintTop_toBottomOf="@+id/imageView"/>
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="15dp" app:layout_constraintTop_toBottomOf="@+id/imageView"/>
     <Button
             android:text="U"
             android:layout_width="39dp"
@@ -252,4 +237,19 @@
             app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toStartOf="@+id/button9"
             android:layout_marginLeft="16dp" android:layout_marginStart="16dp" android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/button35"/>
+    <FrameLayout
+            android:layout_width="169dp"
+            android:layout_height="319dp"
+            android:id="@+id/frameLayout" app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp" app:layout_constraintTop_toBottomOf="@+id/disguised_word_text_view">
+
+        <TextView
+                android:text="@string/wrong_picks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView2" android:textSize="18sp"
+                android:gravity="center" tools:layout_conversion_absoluteHeight="24dp"
+                tools:layout_editor_absoluteY="89dp" tools:layout_editor_absoluteX="222dp"
+                tools:layout_conversion_absoluteWidth="169dp"/>
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
