@@ -12,7 +12,5 @@
     <string name="askForGuess">Guess a letter</string>
     <string name="onePlayer">One Player</string>
     <string name="twoPlayer">Two Players</string>
-    <string name="about_menu">About</string>
-    <string name="about_title">Hangman</string>
-    <string name="about_message">Created by Conrad</string>
+    <string name="wrong_picks">Wrong Picks</string>
 </resources>
