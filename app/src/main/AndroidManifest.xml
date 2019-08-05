@@ -9,10 +9,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".GuessWord">
-        </activity>
         <activity
-                android:name=".GuessUserWord"
+                android:name=".GuessWord"
                 android:parentActivityName=".ChosenWordMode">
         </activity>
         <activity

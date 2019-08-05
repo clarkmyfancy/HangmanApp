@@ -18,7 +18,7 @@ class ChosenWordMode : AppCompatActivity() {
     fun submitSecretWord(view: View) {
         val secretWord = findViewById<TextView>(R.id.enterSecretWord).text.toString()
 
-        val intent = Intent(this, GuessUserWord::class.java).apply {
+        val intent = Intent(this, GuessWord::class.java).apply {
             putExtra(SECRET_WORD, secretWord)
         }
 
