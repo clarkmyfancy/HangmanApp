@@ -5,26 +5,24 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import java.lang.StringBuilder
+import androidx.databinding.DataBindingUtil
+import com.example.hangman.databinding.ActivityGuessWordBinding
 
 class GuessWord : AppCompatActivity() {
 
-    class Game {
-        var secretWord: String = ""
-        var disguisedWord: String = ""
-        var guessedLetters: MutableList<Char> = mutableListOf<Char>()
-    }
-    var game = Game()
+    private lateinit var binding: ActivityGuessWordBinding
+
+    private var game = Game()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_guess_word)
+
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_guess_word)
 
         val secretWord = intent.getStringExtra(SECRET_WORD).toString()
         game.secretWord = secretWord
         val disguisedWord = this.disguiseWord(secretWord)
-        val disguisedWordView = findViewById<TextView>(R.id.disguised_word_text_view).apply {
-            text = disguisedWord
-        }
+        binding.disguisedWordTextView.text = disguisedWord
     }
 
     fun disguiseWord(secretWord: String): String {
