@@ -66,7 +66,8 @@
                 app:layout_constraintStart_toEndOf="@+id/o_button"
                 app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="50dp"
-                app:layout_constraintBaseline_toBaselineOf="@+id/o_button" android:onClick="evaluateGuess"/>
+                app:layout_constraintBaseline_toBaselineOf="@+id/o_button" android:onClick="evaluateGuess"
+        />
         <Button
                 android:text="Y"
                 android:layout_width="39dp"
