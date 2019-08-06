@@ -3,6 +3,7 @@ package com.example.hangman
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import java.lang.StringBuilder
 import androidx.databinding.DataBindingUtil
@@ -22,7 +23,7 @@ class GuessWord : AppCompatActivity() {
         val secretWord = intent.getStringExtra(SECRET_WORD).toString()
         game.secretWord = secretWord
         val disguisedWord = this.disguiseWord(secretWord)
-        binding.disguisedWordTextView.text = disguisedWord
+        binding.disguisedWordTextView.text = this.generatePrintableWord(disguisedWord)
     }
 
     fun disguiseWord(secretWord: String): String {
@@ -35,65 +36,67 @@ class GuessWord : AppCompatActivity() {
         return disguisedWord
     }
 
+    private fun generatePrintableWord(disguisedWord: String): CharSequence? {
+        val builder =  StringBuilder()
+        for (i in 0 until disguisedWord.length) {
+            if (disguisedWord[i].equals("_")) {
+                builder.append("_ ")
+            }
+            builder.append(disguisedWord[i])
+        }
+        return builder
+    }
+
     fun evaluateGuess(view: View) {
-//        val guessedLetter = findViewById<TextView>(R.id.askForGuess).text.toString()
-//        if (this.checkIfLetterInSecretWord(guessedLetter)) {
-//            val newDisguisedWord = this.generateNewDisguisedWord(guessedLetter.single())
-//            this.updateDisguisedWord(newDisguisedWord)
-//        } else {
-//            // if letter is not in secret word
+        val guessedLetter: Char?
+        var letterInWord = false
+
+        // check is to cast view to type Button
+        if (view is Button) {
+            guessedLetter = view.text.single()
+            letterInWord = game.secretWord.contains(guessedLetter, true)
+            if (letterInWord) {
+                val newDisguisedWord = this.generateNewDisguisedWord(guessedLetter)
+                this.updateDisguisedWord(newDisguisedWord)
+            } else {
 //            // flash the text box red with their guess
 //            val textView = findViewById<TextView>(R.id.askForGuess)
 //            textView.setTextColor(getColor(R.color.red))
-//        }
+            }
+        }
     }
 
-//    fun checkIfLetterInSecretWord(guess: String): Boolean {
-//        val length = this.game.secretWord.length
-//        for (i in 0 until length) {
-//            if (this.game.secretWord[i] == guess.single())  {
-//                return true
-//            }
-//        }
-//        return false
-//    }
+    fun generateNewDisguisedWord(guess: Char): String {
+        val length = this.game.secretWord.length
+        var candidateGuessUpdate = StringBuilder()
 
-//    fun generateNewDisguisedWord(guess: Char): String {
-//        val length = this.game.secretWord.length
-//        var candidateGuessUpdate = StringBuilder()
-//
-//        // for each space in disguised word:
-//        for (i in 0 until length) {
-//            // if secretword[i] is in guessed letters
-//            if (this.game.guessedLetters.contains(this.game.secretWord[i])) {
-//                // reveal letter in disguised letters
-//                candidateGuessUpdate.append(this.game.secretWord[i])
-//            }
-//            // else if new guess == secretword[i]
-//            else if (guess == this.game.secretWord[i]) {
-//                // reveal letter in disguesed letters
-//                candidateGuessUpdate.append(guess)
-//                // add new guess to guessedLetters
-//                this.game.guessedLetters.add(guess)
-//            }
-//            else {
-//                candidateGuessUpdate.append("_")
-//            }
-//        }
-//        return candidateGuessUpdate.toString()
-//    }
+        // for each space in disguised word:
+        for (i in 0 until length) {
+            // if secretword[i] is in guessed letters
+            if (this.game.guessedLetters.contains(this.game.secretWord[i])) {
+                // reveal letter in disguised letters
+                candidateGuessUpdate.append(this.game.secretWord[i])
+            }
+            // else if new guess == secretword[i]
+            else if (guess == this.game.secretWord[i]) {
+                // reveal letter in disguesed letters
+                candidateGuessUpdate.append(guess)
+                // add new guess to guessedLetters
+                this.game.guessedLetters.add(guess)
+            }
+            else {
+                candidateGuessUpdate.append("_")
+            }
+        }
+        return candidateGuessUpdate.toString()
+    }
 
-//    fun updateDisguisedWord(dWord: String) {
-//        val disguisedWord = findViewById<TextView>(R.id.disguisedWordTextView).apply {
-//            text = dWord
-//        }
-//    }
-//
-//    fun clearUserGuess() {
-//        val textView = findViewById<TextView>(R.id.askForGuess).apply {
-//            text = ""
-//        }
-//
-//        // turn the color of text view bck to black
-//    }
+    fun updateDisguisedWord(dWord: String) {
+        val disguisedWord = findViewById<TextView>(R.id.disguisedWordTextView).apply {
+            text = dWord
+        }
+    }
 }
+
+
+
