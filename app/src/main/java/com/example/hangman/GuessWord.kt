@@ -39,10 +39,12 @@ class GuessWord : AppCompatActivity() {
     private fun generatePrintableWord(disguisedWord: String): CharSequence? {
         val builder =  StringBuilder()
         for (i in 0 until disguisedWord.length) {
-            if (disguisedWord[i].equals("_")) {
+            if (disguisedWord[i] == "_".single()) {
                 builder.append("_ ")
+            } else {
+                builder.append(disguisedWord[i])
             }
-            builder.append(disguisedWord[i])
+
         }
         return builder
     }
@@ -58,15 +60,18 @@ class GuessWord : AppCompatActivity() {
             if (letterInWord) {
                 val newDisguisedWord = this.generateNewDisguisedWord(guessedLetter)
                 this.updateDisguisedWord(newDisguisedWord)
+                // update the button to go away a little
             } else {
-//            // flash the text box red with their guess
-//            val textView = findViewById<TextView>(R.id.askForGuess)
-//            textView.setTextColor(getColor(R.color.red))
+                // put the letter in the wrong guesses box
             }
+            val black = getResources().getColor(R.color.black)
+            // make the button go away a little
+            view.setBackgroundColor(black)
         }
     }
 
     fun generateNewDisguisedWord(guess: Char): String {
+        val lowercaseGuess = guess.toLowerCase()
         val length = this.game.secretWord.length
         var candidateGuessUpdate = StringBuilder()
 
@@ -78,11 +83,11 @@ class GuessWord : AppCompatActivity() {
                 candidateGuessUpdate.append(this.game.secretWord[i])
             }
             // else if new guess == secretword[i]
-            else if (guess == this.game.secretWord[i]) {
+            else if (lowercaseGuess == this.game.secretWord[i]) {
                 // reveal letter in disguesed letters
-                candidateGuessUpdate.append(guess)
+                candidateGuessUpdate.append(lowercaseGuess)
                 // add new guess to guessedLetters
-                this.game.guessedLetters.add(guess)
+                this.game.guessedLetters.add(lowercaseGuess)
             }
             else {
                 candidateGuessUpdate.append("_")
@@ -92,9 +97,7 @@ class GuessWord : AppCompatActivity() {
     }
 
     fun updateDisguisedWord(dWord: String) {
-        val disguisedWord = findViewById<TextView>(R.id.disguisedWordTextView).apply {
-            text = dWord
-        }
+        binding.disguisedWordTextView.text = this.generatePrintableWord(dWord)
     }
 }
 
