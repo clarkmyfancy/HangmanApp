@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.TextView
 import java.lang.StringBuilder
 import androidx.databinding.DataBindingUtil
 import com.example.hangman.databinding.ActivityGuessWordBinding
@@ -44,7 +43,6 @@ class GuessWord : AppCompatActivity() {
             } else {
                 builder.append(disguisedWord[i])
             }
-
         }
         return builder
     }
@@ -60,12 +58,10 @@ class GuessWord : AppCompatActivity() {
             if (letterInWord) {
                 val newDisguisedWord = this.generateNewDisguisedWord(guessedLetter)
                 this.updateDisguisedWord(newDisguisedWord)
-                // update the button to go away a little
             } else {
                 // put the letter in the wrong guesses box
             }
             val black = getResources().getColor(R.color.black)
-            // make the button go away a little
             view.setBackgroundColor(black)
         }
     }
@@ -75,21 +71,15 @@ class GuessWord : AppCompatActivity() {
         val length = this.game.secretWord.length
         var candidateGuessUpdate = StringBuilder()
 
-        // for each space in disguised word:
         for (i in 0 until length) {
-            // if secretword[i] is in guessed letters
             if (this.game.guessedLetters.contains(this.game.secretWord[i])) {
                 // reveal letter in disguised letters
                 candidateGuessUpdate.append(this.game.secretWord[i])
-            }
-            // else if new guess == secretword[i]
-            else if (lowercaseGuess == this.game.secretWord[i]) {
+            } else if (lowercaseGuess == this.game.secretWord[i]) {
                 // reveal letter in disguesed letters
                 candidateGuessUpdate.append(lowercaseGuess)
-                // add new guess to guessedLetters
                 this.game.guessedLetters.add(lowercaseGuess)
-            }
-            else {
+            } else {
                 candidateGuessUpdate.append("_")
             }
         }
