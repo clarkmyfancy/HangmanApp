@@ -71,4 +71,17 @@ class GuessWordViewModel {
 //    fun updateDisguisedWord(dWord: String) {
 //        binding.disguisedWordTextView.text = this.generatePrintableWord(dWord)
 //    }
+
+    //    fun submitSecretWord(view: View) {
+//        val secretWord = findViewById<TextView>(R.id.enterSecretWord).text.toString()
+//
+//        val intent = Intent(this, GuessWordFragment::class.java).apply {
+//            putExtra(SECRET_WORD, secretWord)
+//        }
+//
+//        // if no word was entered, stay in current activity
+//        if (secretWord.length > 0) {
+//            startActivity(intent)
+//        }
+//    }
 }
