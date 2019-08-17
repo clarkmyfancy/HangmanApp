@@ -1,15 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/navigation"
-            app:startDestination="@id/mainActivity">
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/navigation"
+            app:startDestination="@id/titleScreenFragment">
 
-    <activity android:id="@+id/mainActivity" android:name="com.example.hangman.MainActivity"
-              android:label="fragment_start_screen" tools:layout="@layout/fragment_start_screen"
-    />
-    <fragment android:id="@+id/guessWordFragment" android:name="com.example.hangman.GuessWord.GuessWordFragment"
-              android:label="GuessWordFragment"/>
-    <fragment android:id="@+id/howManyPlayersFragment"
-              android:name="com.example.hangman.HowManyPlayers.HowManyPlayersFragment"
-              android:label="HowManyPlayersFragment"/>
+    <fragment
+            android:id="@+id/titleScreenFragment"
+            android:name="com.example.hangman.TitleScreenFragment"
+            android:label="TitleScreenFragment"
+            tools:layout="@layout/fragment_title_screen">
+
+        <action android:id="@+id/action_titleScreenFragment_to_howManyPlayersFragment"
+                app:destination="@id/howManyPlayersFragment"/>
+    </fragment>
+
+    <fragment
+            android:id="@+id/howManyPlayersFragment"
+            android:name="com.example.hangman.HowManyPlayers.HowManyPlayersFragment"
+            android:label="HowManyPlayersFragment"
+            tools:layout="@layout/fragment_how_many_players">
+
+        <action android:id="@+id/action_howManyPlayersFragment_to_enterWordFragment"
+                app:destination="@id/enterWordFragment"/>
+
+        <action android:id="@+id/action_howManyPlayersFragment_to_guessWordFragment"
+                app:destination="@id/guessWordFragment"/>
+    </fragment>
+
+    <fragment
+            android:id="@+id/enterWordFragment"
+            android:name="com.example.hangman.EnterWord.EnterWordFragment"
+            android:label="EnterWordFragment"
+            tools:layout="@layout/fragment_enter_word">
+
+        <action android:id="@+id/action_enterWordFragment_to_guessWordFragment"
+                app:destination="@id/guessWordFragment"/>
+    </fragment>
+
+    <fragment
+            android:id="@+id/guessWordFragment"
+            android:name="com.example.hangman.GuessWord.GuessWordFragment"
+            android:label="GuessWordFragment"
+            tools:layout="@layout/fragment_guess_word"/>
 </navigation>
