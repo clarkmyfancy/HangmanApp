@@ -15,4 +15,5 @@
     <string name="wrong_picks">Wrong Picks</string>
     <string name="about_menu">About</string>
     <string name="about_message">About Message</string>
+    <string name="title_text">Hangman</string>
 </resources>
