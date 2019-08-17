@@ -5,5 +5,11 @@
             app:startDestination="@id/mainActivity">
 
     <activity android:id="@+id/mainActivity" android:name="com.example.hangman.MainActivity"
-              android:label="fragment_start_screen" tools:layout="@layout/fragment_start_screen"/>
+              android:label="fragment_start_screen" tools:layout="@layout/fragment_start_screen"
+    />
+    <fragment android:id="@+id/guessWordFragment" android:name="com.example.hangman.GuessWord.GuessWordFragment"
+              android:label="GuessWordFragment"/>
+    <fragment android:id="@+id/howManyPlayersFragment"
+              android:name="com.example.hangman.HowManyPlayers.HowManyPlayersFragment"
+              android:label="HowManyPlayersFragment"/>
 </navigation>
