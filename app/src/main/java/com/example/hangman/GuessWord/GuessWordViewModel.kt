@@ -1,31 +1,13 @@
-//package com.example.hangman
-//
-//import androidx.appcompat.app.AppCompatActivity
-//import android.os.Bundle
-//import android.view.View
-//import android.widget.Button
-//import java.lang.StringBuilder
-//import androidx.databinding.DataBindingUtil
-//import com.example.hangman.databinding.ActivityGuessWordBinding
-//
-//class GuessWord : AppCompatActivity() {
-//
-//    private lateinit var binding: ActivityGuessWordBinding
-//
-//    private var game = Game()
-//
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//
-//        binding = DataBindingUtil.setContentView(this, R.layout.fragment_guess_word)
-//
-//        val secretWord = intent.getStringExtra(SECRET_WORD).toString()
+package com.example.hangman.GuessWord
+
+class GuessWordViewModel {
+
+//    val secretWord = intent.getStringExtra(SECRET_WORD).toString()
 //        game.secretWord = secretWord
 //        val disguisedWord = this.disguiseWord(secretWord)
 //        binding.disguisedWordTextView.text = this.generatePrintableWord(disguisedWord)
-//    }
-//
-//    fun disguiseWord(secretWord: String): String {
+
+    //    fun disguiseWord(secretWord: String): String {
 //        val length = secretWord.length
 //        var disguisedWord = ""
 //        for (i in 1..length) {
@@ -34,7 +16,7 @@
 //        this.game.disguisedWord = disguisedWord
 //        return disguisedWord
 //    }
-//
+
 //    private fun generatePrintableWord(disguisedWord: String): CharSequence? {
 //        val builder =  StringBuilder()
 //        for (i in 0 until disguisedWord.length) {
@@ -46,7 +28,7 @@
 //        }
 //        return builder
 //    }
-//
+
 //    fun evaluateGuess(view: View) {
 //        val guessedLetter: Char?
 //        var letterInWord = false
@@ -65,7 +47,7 @@
 //            view.setBackgroundColor(black)
 //        }
 //    }
-//
+
 //    fun generateNewDisguisedWord(guess: Char): String {
 //        val lowercaseGuess = guess.toLowerCase()
 //        val length = this.game.secretWord.length
@@ -85,11 +67,8 @@
 //        }
 //        return candidateGuessUpdate.toString()
 //    }
-//
+
 //    fun updateDisguisedWord(dWord: String) {
 //        binding.disguisedWordTextView.text = this.generatePrintableWord(dWord)
 //    }
-//}
-//
-//
-//
+}
