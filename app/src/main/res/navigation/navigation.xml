@@ -10,7 +10,6 @@
             android:name="com.example.hangman.TitleScreenFragment"
             android:label="TitleScreenFragment"
             tools:layout="@layout/fragment_title_screen">
-
         <action android:id="@+id/action_titleScreenFragment_to_howManyPlayersFragment"
                 app:destination="@id/howManyPlayersFragment"/>
     </fragment>
