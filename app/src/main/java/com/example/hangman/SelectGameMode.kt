@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import com.example.hangman.databinding.FragmentSelectGameModeBinding
 
 class SelectGameMode : Fragment() {
@@ -21,9 +22,9 @@ class SelectGameMode : Fragment() {
             false
         )
 
-        binding.enterWordButton.setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.action_selectGameMode_to_enterWord)
-        )
+        binding.enterWordButton.setOnClickListener {
+            it.findNavController().navigate(SelectGameModeDirections.actionSelectGameModeToEnterWord())
+        }
 
         return binding.root
     }
