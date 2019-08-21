@@ -8,7 +8,7 @@
     <fragment
             android:id="@+id/titleScreenFragment"
             android:name="com.example.hangman.TitleScreenFragment"
-            android:label="TitleScreenFragment"
+            android:label="title_screen_fragment"
             tools:layout="@layout/fragment_title_screen">
         <action android:id="@+id/action_titleScreenFragment_to_howManyPlayersFragment"
                 app:destination="@id/howManyPlayersFragment"/>
