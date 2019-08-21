@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import com.example.hangman.R
 import com.example.hangman.databinding.FragmentEnterWordBinding
 
-class EnterWordFragment : Fragment() {
+class EnterWord : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
