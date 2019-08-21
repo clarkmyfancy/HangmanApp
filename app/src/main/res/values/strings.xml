@@ -5,7 +5,7 @@
     <string name="UserEnteredWord">Enter A Word</string>
     <string name="ComputerOpponentInfo">You will play against the computer</string>
     <string name="PlayerOpponentInfo">You will play against a person</string>
-    <string name="startGame">Start a game</string>
+    <string name="startGame">Play</string>
     <string name="enterSecretWord">Enter your secret word</string>
     <string name="submit">Submit</string>
     <string name="GuessWordActivityTitle">Guess the secret word</string>
@@ -16,4 +16,8 @@
     <string name="about_menu">About</string>
     <string name="about_message">About Message</string>
     <string name="title_text">Hangman</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="select_game_mode">Select a game mode</string>
 </resources>
