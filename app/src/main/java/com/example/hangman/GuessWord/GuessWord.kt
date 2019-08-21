@@ -19,6 +19,9 @@ class GuessWord : Fragment() {
             container,
             false)
 
+        val args = GuessWordArgs.fromBundle(arguments!!)
+        binding.disguisedWordTextView.text = args.secretWord
+
         return binding.root
     }
 }
