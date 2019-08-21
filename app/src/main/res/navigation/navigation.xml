@@ -30,7 +30,7 @@
 
     <fragment android:id="@+id/guessWord" android:name="com.example.hangman.GuessWord.GuessWord"
               android:label="GuessWord"
-    tools:layout="@layout/fragment_guess_word">
+              tools:layout="@layout/fragment_guess_word">
         <argument android:name="secretWord" app:argType="string"/>
     </fragment>
 
