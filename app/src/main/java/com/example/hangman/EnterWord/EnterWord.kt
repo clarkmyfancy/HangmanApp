@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.example.hangman.R
 import com.example.hangman.databinding.FragmentEnterWordBinding
 
@@ -19,6 +20,12 @@ class EnterWord : Fragment() {
             container,
             false
         )
+
+        var secretWord: String = binding.enterWordTextView.text.toString()
+
+        binding.submitButton.setOnClickListener {
+            it.findNavController().navigate(EnterWordDirections.actionEnterWordToGuessWord(secretWord))
+        }
 
         return binding.root
     }
