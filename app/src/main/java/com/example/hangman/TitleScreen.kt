@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import com.example.hangman.databinding.FragmentTitleScreenBinding
 
 class TitleScreen : Fragment() {
@@ -20,9 +21,9 @@ class TitleScreen : Fragment() {
             false
         )
 
-        binding.startButton.setOnClickListener (
-            Navigation.createNavigateOnClickListener(R.id.action_titleScreen_to_selectGameMode)
-        )
+        binding.startButton.setOnClickListener {
+            it.findNavController().navigate(TitleScreenDirections.actionTitleScreenToSelectGameMode())
+        }
 
         return binding.root
     }
