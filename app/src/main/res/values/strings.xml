@@ -6,7 +6,7 @@
     <string name="ComputerOpponentInfo">You will play against the computer</string>
     <string name="PlayerOpponentInfo">You will play against a person</string>
     <string name="startGame">Play</string>
-    <string name="enterSecretWord">Enter your secret word</string>
+    <string name="enterSecretWord">Enter a secret word</string>
     <string name="submit">Submit</string>
     <string name="GuessWordActivityTitle">Guess the secret word</string>
     <string name="askForGuess">Guess a letter</string>
