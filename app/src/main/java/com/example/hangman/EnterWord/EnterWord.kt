@@ -25,7 +25,11 @@ class EnterWord : Fragment() {
 
         binding.submitButton.setOnClickListener {
             val word = getCurrentWord()
-            it.findNavController().navigate(EnterWordDirections.actionEnterWordToGuessWord(word))
+            if (word.isEmpty()) {
+                binding.enterWordText.error = "Enter a word"
+            } else {
+                it.findNavController().navigate(EnterWordDirections.actionEnterWordToGuessWord(word))
+            }
         }
 
         return binding.root
