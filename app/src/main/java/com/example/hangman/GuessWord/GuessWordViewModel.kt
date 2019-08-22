@@ -9,9 +9,11 @@ class GuessWordViewModel : ViewModel() {
 
 
 
-    private val _word = MutableLiveData<String>()
-    val word: LiveData<String>
-        get() = _word
+    private val _secretWord = MutableLiveData<String>()
+    val secretWord: LiveData<String>
+        get() = _secretWord
+
+
 
     override fun onCleared() {
         super.onCleared()
