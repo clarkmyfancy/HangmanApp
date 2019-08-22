@@ -12,21 +12,26 @@ import com.example.hangman.databinding.FragmentEnterWordBinding
 
 class EnterWord : Fragment() {
 
+    private lateinit var binding: FragmentEnterWordBinding
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        val binding: FragmentEnterWordBinding = DataBindingUtil.inflate(
+        binding = DataBindingUtil.inflate(
             inflater,
             R.layout.fragment_enter_word,
             container,
             false
         )
 
-        var secretWord: String = binding.enterWordTextView.text.toString()
-
         binding.submitButton.setOnClickListener {
-            it.findNavController().navigate(EnterWordDirections.actionEnterWordToGuessWord(secretWord))
+            val word = getCurrentWord()
+            it.findNavController().navigate(EnterWordDirections.actionEnterWordToGuessWord(word))
         }
 
         return binding.root
+    }
+
+    fun getCurrentWord(): String {
+        return binding.enterWordText.text.toString()
     }
 }
