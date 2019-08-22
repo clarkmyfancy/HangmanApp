@@ -1,7 +1,22 @@
 package com.example.hangman.GuessWord
 
-class GuessWordViewModel {
+import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 
+class GuessWordViewModel : ViewModel() {
+
+
+
+    private val _word = MutableLiveData<String>()
+    val word: LiveData<String>
+        get() = _word
+
+    override fun onCleared() {
+        super.onCleared()
+        Log.i("EnterWordViewModel", "EnterWordViewModel destroyed")
+    }
 //    val secretWord = intent.getStringExtra(SECRET_WORD).toString()
 //        game.secretWord = secretWord
 //        val disguisedWord = this.disguiseWord(secretWord)
